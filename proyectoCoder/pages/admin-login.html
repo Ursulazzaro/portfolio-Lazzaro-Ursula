@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Portafolio Ursula</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body class="cuerpo">
+    <a href="index.html" class="boton-volver">← Volver</a>
+    <section class="seccion admin-login">
+        <h2>Login de Administrador</h2>
+        <div class="formulario-contacto">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button class="boton" onclick="login()">Ingresar</button>
+            <p id="error" style="color:red; display:none;">Usuario o contraseña incorrectos</p>
+        </div>
+    </section>
+
+    <script>
+        function login() {
+            const user = "admin";
+            const pass = "1234";
+        }
+    </script>
+</body>
+</html>
