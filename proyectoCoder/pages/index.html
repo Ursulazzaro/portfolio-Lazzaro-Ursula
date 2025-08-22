@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Ursula Lazzaro</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baguet+Script&family=Magneto&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio - Ursula Lazzaro</title>
+<link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Baguet+Script&family=Magneto&display=swap" rel="stylesheet">
 </head>
 <body class="cuerpo">
 
-    <!-- Barra de navegación -->
-    <nav class="barra-nav">
-        <a href="admin-login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login Admin</a>
-        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#about"><i class="fas fa-user"></i> Sobre mí</a>
-        <a href="#experience"><i class="fas fa-briefcase"></i> Experiencia</a>
-        <a href="#projects"><i class="fas fa-code"></i> Proyectos</a>
-        <a href="#tech"><i class="fas fa-cogs"></i> Tecnologías</a>
-        <a href="#stats"><i class="fas fa-chart-line"></i> Estadísticas</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contacto</a>
-        <button id="lang-btn" class="boton-idioma"><span class="texto">ES</span></button>
+<!-- Barra de navegación -->
+<nav class="barra-nav" id="navbar">
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <a href="admin-login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login Admin</a>
+    <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#about"><i class="fas fa-user"></i> Sobre mí</a>
+    <a href="#experience"><i class="fas fa-briefcase"></i> Experiencia</a>
+    <a href="#projects"><i class="fas fa-code"></i> Proyectos</a>
+    <a href="#tech"><i class="fas fa-cogs"></i> Tecnologías</a>
+    <a href="#stats"><i class="fas fa-chart-line"></i> Estadísticas</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contacto</a>
+    <button id="lang-btn" class="boton-idioma"><span class="texto">ES</span></button>
+</nav>
 
-    </nav>
 
     <!-- Inicio / Hero -->
     <section id="hero" class="seccion inicio">
@@ -179,25 +179,35 @@
     <footer class="footer">
     <p>© 2025 Ursula Lazzaro. Todos los derechos reservados.</p>
     <p>Comencé este proyecto en agosto y fue hecho con 💖</p>
-        <div class="iconos-social">
-            <a href="https://github.com/Ursulazzaro"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/ursula-martina-lazzaro-287215268/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
+    <div class="iconos-social">
+        <a href="https://github.com/Ursulazzaro"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/ursula-martina-lazzaro-287215268/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
     </footer>
 
-
     <script>
-    const btn = document.getElementById('lang-btn');
-    btn.addEventListener('click', () => {
-        btn.classList.toggle('ingles');
+const btn = document.getElementById('lang-btn');
+btn.addEventListener('click', () => {
+    btn.classList.toggle('ingles');
+    btn.textContent = btn.classList.contains('ingles') ? 'EN' : 'ES';
+});
 
-        if(btn.classList.contains('ingles')){
-            btn.textContent = 'EN';
-        } else {
-            btn.textContent = 'ES';
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("navbar");
+const navLinks = nav.querySelectorAll("a");
+
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+});
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        if(nav.classList.contains("show")){
+            nav.classList.remove("show");
         }
     });
-    </script>
+});
+</script>
 
 </body>
 </html>

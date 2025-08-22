@@ -6,6 +6,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.menu-toggle {
+    display: none;
+}
+
+
 html, body {
     height: 100%;
     background: #0d0d0d;
@@ -83,7 +88,7 @@ html, body {
     color: #fff;
 }
 
-/* Animación suave */
+
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(10px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -332,4 +337,82 @@ html, body {
 
 #lang-btn.ingles::before {
     left: 63px;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+
+    #hero h1, #hero h2 {
+        position: static;
+        transform: none;
+        text-align: center;
+        white-space: normal;
+        margin: 10px 20px;
+    }
+
+    #hero h2 {
+        margin-top: 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .about-text {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+
+    .proyectos-grid, .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        transform: none !important;
+        box-shadow: 0 8px 20px rgba(138,0,255,0.3);
+    }
+
+    .menu-toggle {
+        display: block;
+        background: linear-gradient(135deg,#6a00ff,#b366ff);
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+
+    #lang-btn {
+        display: block;
+        position: absolute;
+        top: 20px;   
+        right: 15px; 
+        width: 100px;  
+        height: 35px;  
+        font-size: 0.9rem; 
+        z-index: 1200;   
+    }
+
+    .barra-nav a {
+        display: none;
+    }
+
+    .barra-nav.show a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .barra-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
 }
